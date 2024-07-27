@@ -1,6 +1,6 @@
-const mongooose = require("mongoose");
+const mongoose = require("mongoose");
 
-const userAddressSchema = mongooose.Schema({
+const userAddressSchema = mongoose.Schema({
     zoneNumber: {
         type: Number,
     },
@@ -10,40 +10,55 @@ const userAddressSchema = mongooose.Schema({
     colonyName: {
         type: String,
     },
-    Address: {
+    cityName: {
         type: String,
+    },
+    street: {
+        type: String,
+    },
+    locality: {
+        type: String,
+    },
+    propertyId: {
+        type: Number,
+    },
+    postalCode: {
+        type: Number,
+    },
+    propertyType: {
+        type: Boolean, // true means commercial, false means residential
     }
 });
 
-const userDataSchema = mongooose.Schema({
+const userDataSchema = mongoose.Schema({
     fullName: {
         type: String,
         required: true,
-        minLenght: 3,
-        maxLenght: 50,
+        minLength: 3,
+        maxLength: 50,
         trim: true,
         lowercase: true,
     },
     phoneNumber: {
         type: Number,
-        maxLenght: 10,
-        minLenght: 10,
+        maxLength: 10,
+        minLength: 10,
     },
     aadharCard: {
         type: Number,
-        minLenght: 16,
-        maxLenght: 16,
+        minLength: 16,
+        maxLength: 16,
     },
     countryCode: {
         type: Number,
-        minLenght: 1,
-        maxLenght: 3
+        minLength: 1,
+        maxLength: 3,
     },
     address: userAddressSchema
 });
 
-const userModel = mongooose.model("User", userDataSchema);
+const userModel = mongoose.model("User", userDataSchema);
 
 module.exports = {
     userModel
-}
+};

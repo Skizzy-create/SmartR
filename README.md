@@ -1,4 +1,4 @@
-# Swastimuni API: Add New User
+# SmartR API: Add New User
 
 ## Route Description
 
@@ -20,7 +20,12 @@ The `/newUser` route allows you to add a new user to the Swastimuni app. Users c
             "zoneNumber": 5,
             "wardNumber": 10,
             "colonyName": "Green Valley",
-            "Address": "123 Main Street"
+            "cityName": "Springfield",
+            "street": "Main Street",
+            "locality": "Downtown",
+            "propertyId": 12345,
+            "postalCode": 67890,
+            "propertyType": true
         }
     }
     ```
@@ -28,7 +33,16 @@ The `/newUser` route allows you to add a new user to the Swastimuni app. Users c
     - `phoneNumber`: User's phone number (10 digits)
     - `aadharCard`: User's Aadhar card number (16 digits)
     - `countryCode`: Numeric country code (e.g., 1 for USA)
-    - `address`: User's address details (including zone, ward, colony, and street address)
+    - `address`: User's address details, including:
+      - `zoneNumber`: Zone number
+      - `wardNumber`: Ward number
+      - `colonyName`: Colony name
+      - `cityName`: City name
+      - `street`: Street name
+      - `locality`: Locality
+      - `propertyId`: Property ID
+      - `postalCode`: Postal code
+      - `propertyType`: Property type (true for commercial, false for residential)
 
 - **Response** (if successful):
   ```json
@@ -59,7 +73,12 @@ The `/newUser` route allows you to add a new user to the Swastimuni app. Users c
              "zoneNumber": 3,
              "wardNumber": 7,
              "colonyName": "Rose Gardens",
-             "Address": "456 Elm Street"
+             "cityName": "Metropolis",
+             "street": "Elm Street",
+             "locality": "Uptown",
+             "propertyId": 67890,
+             "postalCode": 12345,
+             "propertyType": false
          }
      }
      ```
@@ -71,3 +90,5 @@ The `/newUser` route allows you to add a new user to the Swastimuni app. Users c
        "userId": "609d8a1f8c9a4c001f3e7b1a"
    }
    ```
+
+---
